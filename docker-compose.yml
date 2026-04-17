@@ -7,7 +7,7 @@ services:
       - n8n_default
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.vitrina.rule=Host(`napoleonejoyas.tech`, `www.napoleonejoyas.tech`)"
+      - "traefik.http.routers.vitrina.rule=Host(`napoleonejoyas.tech`) || Host(`www.napoleonejoyas.tech`)"
       - "traefik.http.routers.vitrina.entrypoints=websecure"
       - "traefik.http.routers.vitrina.tls=true"
       - "traefik.http.routers.vitrina.tls.certresolver=mytlschallenge"
