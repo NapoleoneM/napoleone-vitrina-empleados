@@ -1,0 +1,181 @@
+/* Variables Estilo Halo (Shopify) */
+:root {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F8F8;
+    --text-dark: #222222;
+    --text-light: #666666;
+    --border-color: #EAEAEA;
+    --border-dark: #222222;
+    --gold-accent: #D4AF37; /* Solo para detalles ultra sutiles */
+    --transition-speed: 0.3s ease;
+}
+
+/* Reseteo y Tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+    /* Tipografía limpia, típica de Halo. Reemplazar por la fuente de tu tienda */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    opacity: 0; 
+    transition: opacity 0.8s ease-in;
+    -webkit-font-smoothing: antialiased;
+}
+
+.halo-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Cabecera */
+.halo-header {
+    text-align: center;
+}
+
+.brand-logo {
+    max-width: 300px;
+    margin-bottom: 1rem;
+    /* En un fondo blanco, el logo debe ser negro o dorado oscuro. Sin sombras pesadas. */
+    height: auto;
+}
+
+.page-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.page-subtitle {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    letter-spacing: 0.03em;
+}
+
+/* Cuadrícula de Tarjetas */
+.action-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 600px) {
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.action-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-speed);
+}
+
+.action-card:hover {
+    border-color: var(--border-dark);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.card-desc {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* Botones Estilo Tienda (Solid Black) */
+.btn-halo {
+    display: inline-block;
+    background-color: var(--text-dark);
+    color: var(--bg-primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: 1px solid var(--text-dark);
+    transition: var(--transition-speed);
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-halo:hover {
+    background-color: var(--bg-primary);
+    color: var(--text-dark);
+}
+
+/* Footer Editorial */
+.halo-footer {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.footer-divider {
+    width: 40px;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0 auto 2rem auto;
+}
+
+.footer-text {
+    color: var(--text-light);
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.link-underline {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.link-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--text-dark);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

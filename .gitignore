@@ -1,0 +1,6 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar variables de entorno si en el futuro agregas un archivo .env
+.env
