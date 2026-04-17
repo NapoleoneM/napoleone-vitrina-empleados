@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  vitrina_empleados:
+    build: .
+    container_name: napoleone_vitrina
+    restart: unless-stopped
+    networks:
+      - n8n_default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vitrina.rule=Host(`napoleonejoyas.tech`, `www.napoleonejoyas.tech`)"
+      - "traefik.http.routers.vitrina.entrypoints=websecure"
+      - "traefik.http.routers.vitrina.tls=true"
+      - "traefik.http.routers.vitrina.tls.certresolver=mytlschallenge"
+      - "traefik.http.services.vitrina.loadbalancer.server.port=80"
+
+networks:
+  n8n_default:
+    external: true
